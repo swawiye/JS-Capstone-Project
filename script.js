@@ -1,3 +1,4 @@
+//Responsive navbar
 const hamburgerButton = document.getElementById('hamburger-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
