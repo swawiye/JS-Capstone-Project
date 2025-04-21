@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Home</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/b848093772.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="bg-gray-300">
-        <nav class="flex justify-between items-center mx-auto">
+        <nav class="flex justify-between items-center px-4 py-3 md:px-8 relative">
+            <!-- Logo -->
             <div>
-                <img class="w-16 h-16" src=" " alt=" ">
+                <img class="w-16 h-16" src=" " alt="logo" />
             </div>
-            <div>
-                <ul class="flex items-center gap-10">
+
+            <!-- Hamburger -->
+            <button id="hamburger-button" class="text-3xl md:hidden focus:outline-none">
+                &#9776;
+            </button>
+
+            <!-- Menu (responsive) -->
+            <div id="mobile-menu" class="absolute top-full left-0 w-full bg-gray-300 flex-col items-center gap-4 px-4 py-4 md:static md:flex md:flex-row md:w-auto md:gap-10 md:py-0 md:px-0 hidden md:flex">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
                     <li><a href="#" class="hover:text-pink-500">Home</a></li>
                     <li><a href="#" class="hover:text-pink-500">Music</a></li>
                 </ul>
             </div>
-            <div>
-                <button class="bg-pink-300 px-5 py-2 rounded-full text-white hover:bg-pink-500">Log In</button>
+
+            <!-- Log In (desktop only) -->
+            <div class="hidden md:block">
+                <button class="bg-pink-300 px-5 py-2 rounded-full text-white hover:bg-pink-500">
+                    Log In
+                </button>
             </div>
         </nav>
+
+        <!-- Log In (mobile only, below nav) -->
+        <div class="md:hidden px-4 pb-4">
+            <button class="bg-pink-300 w-full py-2 rounded-full text-white hover:bg-pink-500">
+                Log In
+            </button>
+        </div>
     </header>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
 
-<!--
-    <nav class="bg-pink-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between">
-                <div>logo</div>
-                <div>home</div>
-                <div>music</div>
-                <div>log in</div>
-            </div>
-        </div>
-    </nav>
 
-    <i class="fa-solid fa-headphones"></i>
--->
+
