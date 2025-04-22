@@ -54,7 +54,7 @@ nav .circle {
 }
 #progress::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background-color: rgb(196, 99, 131);
+    background-color: rgb(186, 58, 101);
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -75,7 +75,12 @@ nav .circle {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: rgb(196, 99, 131);
+    color: rgb(186, 58, 101);
     box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
     cursor: pointer;
+}
+.controls div:nth-child(2) {
+    transform: scale(1.5);
+    background:  rgb(186, 58, 101);
+    color: white;
 }
