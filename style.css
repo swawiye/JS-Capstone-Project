@@ -54,9 +54,28 @@ nav .circle {
 }
 #progress::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background-color: palevioletred;
+    background-color: rgb(196, 99, 131);
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 6px solid #fff;
+    box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls div {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(196, 99, 131);
+    box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+    cursor: pointer;
 }
