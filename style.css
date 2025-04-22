@@ -27,3 +27,19 @@ nav .circle {
     color: palevioletred;
     box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
 } 
+.song-img {
+    width: 250px;
+    border-radius: 5%;
+    box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
+    margin-left: 40px;
+}
+.music-player h1{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin-top: 20px;
+}
+.music-player p{
+    font-size: 14px;
+    color: white;
+}
