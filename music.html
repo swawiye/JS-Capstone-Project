@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/b848093772.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <!--Navbar-->
+    <section class="bg-pink-900">
+        <nav class="flex justify-between items-center px-4 py-3 md:px-8 relative">
+            <!-- Logo -->
+            <div>
+                <h1 class="text-white font-bold text-2xl"><a href="index.html">MUSIQAA</a></h1>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger-button" class="text-3xl md:hidden focus:outline-none text-white">
+                &#9776;
+            </button>
+
+            <!-- Menu (responsive) -->
+            <div id="mobile-menu" class="absolute top-full left-0 w-full bg-pink-900 flex-col items-center gap-4 px-4 py-4 md:static md:flex md:flex-row md:w-auto md:gap-10 md:py-0 md:px-0 hidden md:flex">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
+                    <li><a href="index.html" class="text-white hover:text-pink-500">Home</a></li>
+                    <li><a href="music.html" class="text-white hover:text-pink-500">Music</a></li>
+                </ul>
+                <div class="md:hidden">
+                    <button class="text-white hover:text-pink-500"><i class="fa-solid fa-user"></i></button>
+                </div>
+            </div>
+
+            <!-- Log In (desktop only) -->
+            <div class="hidden md:block">
+                <button class="text-white hover:text-pink-500"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Music section -->
+    <main>
+        <div class="bg-white p-40 w-60"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-pink-900 text-white py-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- About Section -->
+            <div>
+              <h3 class="text-lg font-semibold mb-2">About</h3>
+              <p class="text-pink-500"></p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+              <ul class="space-y-1" >
+                  <li><a href="index.html" class="text-pink-500 hover:text-white transition">Home</a></li>
+                  <li><a href="music.html" class="text-pink-500 hover:text-white transition">Music</a></li>
+              </ul>
+            </div>
+            <!-- Contact Section -->
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Contact Us </h3>
+              <p class="text-pink-500">Email address: <span class="text-white">musiqaa@gmail.com</span></p>
+              <p class="text-pink-500">Phone number: <span class="text-white">+254 701 374 708</span></p>
+            </div>
+            <!-- Social Media Icons --> 
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                <div class="flex space-x-4 p-2">
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 cursor-pointer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-pink-500 text-center mt-5">
+            <p>&copy; 2025 Musiqaa</p>
+        </div>
+    </footer> 
+
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
+
+
+
