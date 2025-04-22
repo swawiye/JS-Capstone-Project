@@ -6,6 +6,20 @@
     <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/b848093772.js" crossorigin="anonymous"></script>
+    <style>
+        /* Hero section slideshow */
+        @keyframes slideshow {
+        0%, 100% { background-image: url('assets/hero1.jpg'); }
+        33% { background-image: url('assets/hero2.jpg'); }
+        66% { background-image: url('assets/hero3.jpg'); }
+        }
+
+        .slideshow {
+            animation: slideshow 15s infinite ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
 <body>
     <!--Navbar-->
@@ -13,7 +27,7 @@
         <nav class="flex justify-between items-center px-4 py-3 md:px-8 relative">
             <!-- Logo -->
             <div>
-                <img class="w-16 h-16" src=" " alt="logo" />
+                <h1 class="text-white font-bold text-2xl">MUSIQAA</h1>
             </div>
 
             <!-- Hamburger -->
@@ -41,49 +55,49 @@
 
     <!-- Hero section -->
     <header id="hero" class="h-screen flex items-center justify-center text-white text-center slideshow">
-        <div class="text-black text-center bg-emerald-600/60 text-xl p-8 rounded-lg">
-            <h1 class="text-4xl font-bold">Transform yourself today</h1>
-            <p class="mt-5">Start the journey of changing your mind, heart, self or way of life through spiritual conversion.</p>
+        <div class="text-black text-center bg-pink-900/60 text-xl p-8 rounded-lg">
+            <h1 class="text-4xl font-bold">strcvghj</h1>
+            <p class="mt-5">gdcgvjhbk</p>
         </div>
     </header>
 
-        <!-- Footer -->
-        <footer class="bg-pink-900 text-white py-8">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- About Section -->
-                <div>
-                  <h3 class="text-lg font-semibold mb-2">About</h3>
-                  <p class="text-pink-500">Start the journey of changing your mind, heart, self or way of life through spiritual conversion.</p>
-                </div>
-                <!-- Quick Links -->
-                <div>
-                  <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
-                  <ul class="space-y-1" >
-                      <li><a href="index.html" class="text-pink-500 hover:text-white transition">Home</a></li>
-                      <li><a href="music.html" class="text-pink-500 hover:text-white transition">Music</a></li>
-                  </ul>
-                </div>
-                <!-- Contact Section -->
-                <div>
-                  <h3 class="text-lg font-semibold mb-2">Contact Us </h3>
-                  <p class="text-pink-500">Email address: <span class="text-white">metanoia@gmail.com</span></p>
-                  <p class="text-pink-500">Phone number: <span class="text-white">+254 701 374 708</span></p>
-                </div>
-                <!-- Social Media Icons --> 
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
-                    <div class="flex space-x-4 p-2">
-                        <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 cursor-pointer"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
+    <!-- Footer -->
+    <footer class="bg-pink-900 text-white py-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- About Section -->
+            <div>
+              <h3 class="text-lg font-semibold mb-2">About</h3>
+              <p class="text-pink-500"></p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+              <ul class="space-y-1" >
+                  <li><a href="index.html" class="text-pink-500 hover:text-white transition">Home</a></li>
+                  <li><a href="music.html" class="text-pink-500 hover:text-white transition">Music</a></li>
+              </ul>
+            </div>
+            <!-- Contact Section -->
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Contact Us </h3>
+              <p class="text-pink-500">Email address: <span class="text-white">musiqaa@gmail.com</span></p>
+              <p class="text-pink-500">Phone number: <span class="text-white">+254 701 374 708</span></p>
+            </div>
+            <!-- Social Media Icons --> 
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+                <div class="flex space-x-4 p-2">
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 cursor-pointer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-white transition after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom text-pink-500 text-center mt-5">
-                <p>&copy; 2025 Metanoia</p>
-            </div>
-        </footer> 
+        </div>
+        <div class="footer-bottom text-pink-500 text-center mt-5">
+            <p>&copy; 2025 Musiqaa</p>
+        </div>
+    </footer> 
 
     <script type="text/javascript" src="script.js"></script>
 </body>
