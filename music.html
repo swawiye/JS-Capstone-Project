@@ -42,24 +42,6 @@
 
     <!-- Music section -->
     <main>
-        <!--
-        <section>
-            <div class="grid grid-cols-2 gap-4 max-w-6xl mx-auto mt-2 mb-5">
-                 - Song 1 -
-                <div class="bg-pink-900/60 border border-pink-900 rounded-lg px-10 py-6">
-                    <h5 class="text-black text-center text-3xl font-bold">Song name</h5>
-                    <p class="mt-5 text-pink-900 font-semibold text-center">Artist</p>
-                </div>
-
-                - Song 2 -
-                <div class="bg-pink-900/60 border border-pink-900 rounded-lg px-10 py-6">
-                    <h5 class="text-black text-center text-3xl font-bold">Song name</h5>
-                    <p class="mt-5 text-pink-900 font-semibold text-center">Artist</p>
-                </div>
-            </div>
-        </section>
-        -->
-
         <div class="container">
             <div class="music-player">
                 <nav>
@@ -82,7 +64,7 @@
                 <input type="range" value="0" id="progress">
                 <div class="controls">
                     <div><i class="fa-solid fa-backward-step"></i></div>
-                    <div><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                    <div><i class="fa-solid fa-play" id="ctrlIcon" onclick="playPause()"></i></div>
                     <div><i class="fa-solid fa-forward-step"></i></div>
                 </div>
             </div> 
