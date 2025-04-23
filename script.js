@@ -57,4 +57,13 @@ function repeatTrack(){
     playTrack();
 }
 
-//Update the time
+//Update the current duration
+let currentTimeData =content.querySelector(".current");
+let CurrentTime = song.currentTime;
+let currentMinutes = Math.floor(CurrentTime /60);
+let currentSeconds = Math.floor(CurrentTime % 60);
+if (currentSeconds < 10) {
+    currentSeconds = "0" + currentSeconds
+}
+currentTimeData.innerText = currentMinutes + ":" + currentSeconds;
+
