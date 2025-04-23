@@ -84,4 +84,42 @@ nav .circle {
     background:  rgb(186, 58, 101);
     color: white;
 }
+.slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.volume_slider{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: rgb(186, 58, 101);
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 3px solid rgb(186, 58, 101);
+    cursor: grab;
+    border-radius: 100%;
+}
+.volume_slider:hover {
+    opacity: 1.0;
+}
+.current-time{
+  padding: 10px;
+  color: white;
+}
+i.fa-volume-low,
+i.fa-volume-high {
+  padding: 10px;
+  color: white;
+}
+
 

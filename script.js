@@ -43,3 +43,18 @@ progress.onchange = function () {
     ctrlIcon.classList.add("fa-pause");
     ctrlIcon.classList.remove("fa-play");
 };
+
+//Volume slider
+let volume_slider = document.querySelector('.volume_slider');
+function setVolume(){
+    curr_track.volume = volume_slider.value / 100;
+}
+
+//Repeat the song
+function repeatTrack(){
+    let current_index = track_index;
+    loadTrack(current_index);
+    playTrack();
+}
+
+//Update the time
