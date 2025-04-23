@@ -40,13 +40,45 @@
         </nav>
     </section>
 
-    <section>
-        <div class="items-center p-20">
-            <p class="mb-10">Genre:<input class="border border-pink-900 ml-2"></p>
-            <p class="mb-10">Playlist:<input class="border border-pink-900 ml-2"></p>
-            <button class="p-2 bg-pink-900 mb-10 rounded-lg">Search</button>
+    <!-- Music section -->
+    <main>
+        <div class="container">
+            <div class="music-player">
+                <nav>
+                    <div class="circle">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </div>
+                    <div class="circle">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </nav>
+                <!--Song image-->
+                <img src="assets/hero3.jpg" class="song-img">
+                <!--Song details-->
+                <h1>Infrunami</h1> 
+                <p>Steve Lacy</p>
+                <!--Audio-->
+                <audio id="song">
+                    <source src="assets/Infrunami.mp4" type="audio/mpeg">
+                </audio>
+                <div class="current-time">00:00</div>
+                <input type="range" value="0" id="progress">
+                <div class="controls">
+                    <div><i class="fa-solid fa-shuffle"></i></div>
+                    <div><i class="fa-solid fa-backward-step"></i></div>
+                    <div><i class="fa-solid fa-play" id="ctrlIcon" onclick="playPause()"></i></div>
+                    <div><i class="fa-solid fa-forward-step"></i></div>
+                    <div class="repeat-track"><i class="fa-solid fa-rotate-right"></i></div>
+                </div>
+                <div class="slider-container">
+                    <i class="fa-solid fa-volume-low"></i>
+                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()"> 
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+            </div> 
         </div>
-    </section>
+    </main>
+
     <!-- Footer -->
     <footer class="bg-pink-900 text-white py-8 z-index-">
         <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">

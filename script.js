@@ -1,69 +1,57 @@
-//Responsive navbar
-const hamburgerButton = document.getElementById('hamburger-button');
-const mobileMenu = document.getElementById('mobile-menu');
+// Get DOM elements
+const song = document.getElementById("song");
+const progress = document.getElementById("progress");
+const ctrlIcon = document.getElementById("ctrlIcon");
+const volumeSlider = document.querySelector('.volume_slider');
+const currentTimeDisplay = document.querySelector(".current-time");
 
-hamburgerButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+// Helpers
+const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60).toString().padStart(2, "0");
+    return `${minutes}:${seconds}`;
+};
+
+//Time formatting
+const updateProgress = () => {
+    progress.value = song.currentTime;
+    currentTimeDisplay.innerText = formatTime(song.currentTime);
+};
+
+//Play & pause icon
+const updatePlayPauseIcon = (isPlaying) => {
+    ctrlIcon.classList.toggle("fa-play", !isPlaying);
+    ctrlIcon.classList.toggle("fa-pause", isPlaying);
+};
+
+// Actions
+const togglePlayPause = () => {
+    if (song.paused) {
+        song.play();
+        updatePlayPauseIcon(true);
+    } else {
+        song.pause();
+        updatePlayPauseIcon(false);
+    }
+};
+
+const changeProgress = () => {
+    song.currentTime = progress.value;
+    if (song.paused) song.play();
+    updatePlayPauseIcon(true);
+};
+
+const setVolume = () => {
+    song.volume = volumeSlider.value / 100;
+};
+
+// Button functionality
+ctrlIcon.addEventListener("click", togglePlayPause);
+progress.addEventListener("change", changeProgress);
+volumeSlider.addEventListener("input", setVolume);
+
+song.addEventListener("loadedmetadata", () => {
+    progress.max = song.duration;
 });
 
-//Music toggle buttons
-let progress = document.getElementById("progress");
-let song = document.getElementById("song");
-let ctrlIcon = document.getElementById("ctrlIcon");
-
-song.onloadedmetadata = function () {
-    progress.max = song.duration;
-    progress.value = song.currentTime;
-};
-
-//Toggle play and pause button
-function playPause() {
-   if(ctrlIcon.classList.contains("fa-pause")) {
-    song.pause();
-    ctrlIcon.classList.remove("fa-pause");
-    ctrlIcon.classList.add("fa-play");
-   }
-   else {
-    song.play();
-    ctrlIcon.classList.add("fa-pause");
-    ctrlIcon.classList.remove("fa-play");
-   };
-};
-
-if(song.play()) {
-    setInterval(() => {
-        progress.value = song.currentTime;
-    }, 5000);
-};
-
-//Play song at sought time on progress bar
-progress.onchange = function () {
-    song.play();
-    song.currentTime = progress.value;
-    ctrlIcon.classList.add("fa-pause");
-    ctrlIcon.classList.remove("fa-play");
-};
-
-//Volume slider
-let volume_slider = document.querySelector('.volume_slider');
-function setVolume(){
-    curr_track.volume = volume_slider.value / 100;
-}
-
-//Repeat the song
-function repeatTrack(){
-    let current_index = track_index;
-    loadTrack(current_index);
-    playTrack();
-}
-
-//Update the current duration
-let currentTimeData =content.querySelector(".current");
-let CurrentTime = song.currentTime;
-let currentMinutes = Math.floor(CurrentTime /60);
-let currentSeconds = Math.floor(CurrentTime % 60);
-if (currentSeconds < 10) {
-    currentSeconds = "0" + currentSeconds
-}
-currentTimeData.innerText = currentMinutes + ":" + currentSeconds;
-
+song.addEventListener("timeupdate", updateProgress);
