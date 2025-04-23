@@ -140,26 +140,9 @@ document.querySelector(".repeat-track").addEventListener("click", repeatTrack);
 //Load the first track on page load
 window.addEventListener("DOMContentLoaded", () => {
     loadTrack(currentTrackIndex);
-
-    //Hero section
-    const hero = document.getElementById("hero");
-    const heroImages = [
-        "assets/hero1.jpg",
-        "assets/hero2.jpg",
-        "assets/hero3.jpg"
-    ];
-
-    let currentHeroIndex = 0;
-
-    const changeHeroBg = () => {
-        currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-        hero.style.backgroundImage = `url('${heroImages[currentHeroIndex]}')`;
-    };
-
-    hero.style.backgroundImage = `url('${heroImages[0]}')`;
-    setInterval(changeHeroBg, 5000); // change every 5 seconds
 });
 
+//Fetching data from the API
 
 
 

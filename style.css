@@ -121,23 +121,22 @@ i.fa-volume-high {
   padding: 10px;
   color: white;
 }
-/*Hero section*/
-/* Hero section-landing page on a website */
+
+/* Hero section */
 #hero {
     background: url("assets/hero1.jpg") no-repeat center center/cover;
-    background-attachment: fixed;
     height: 100vh;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* Slideshow hero */
+    transition: background-image 1s ease-in-out;
+    position: relative;
+    z-index: 1;
 }
 
-.slideshow {
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
-}
 
 
 
