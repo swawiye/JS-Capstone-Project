@@ -1,3 +1,11 @@
+//Responsive navbar
+const hamburgerButton = document.getElementById('hamburger-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburgerButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
 // Get DOM elements
 const song = document.getElementById("song");
 const progress = document.getElementById("progress");
@@ -55,3 +63,45 @@ song.addEventListener("loadedmetadata", () => {
 });
 
 song.addEventListener("timeupdate", updateProgress);
+
+//Tracklist
+const playlist = [
+    {
+        title: "Infrunami",
+        artist: "Steve Lacy",
+        file: "assets/Infrunami.mp4",
+        image: "assets/hero3.jpg"
+    },
+    {
+        title: "Dark Red",
+        artist: "Steve Lacy",
+        file: "assets/DarkRed.mp4",
+        image: "assets/hero2.jpg"
+    },
+    {
+        title: "Bad Habit",
+        artist: "Steve Lacy",
+        file: "assets/BadHabit.mp4",
+        image: "assets/hero1.jpg"
+    }
+];
+
+let currentTrackIndex = 0;
+
+//Track loading
+const songImg = document.querySelector(".song-img");
+const songTitle = document.querySelector("h1");
+const songArtist = document.querySelector("p");
+
+const loadTrack = (index) => {
+    const track = playlist[index];
+    song.src = track.file;
+    songImg.src = track.image;
+    songTitle.textContent = track.title;
+    songArtist.textContent = track.artist;
+
+    progress.value = 0;
+    updatePlayPauseIcon(false);
+};
+
+
