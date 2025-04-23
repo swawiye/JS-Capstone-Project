@@ -104,4 +104,45 @@ const loadTrack = (index) => {
     updatePlayPauseIcon(false);
 };
 
+//Track control functions
+const playTrack = () => {
+    song.play();
+    updatePlayPauseIcon(true);
+};
+
+const pauseTrack = () => {
+    song.pause();
+    updatePlayPauseIcon(false);
+};
+
+const nextTrack = () => {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    loadTrack(currentTrackIndex);
+    playTrack();
+};
+
+const prevTrack = () => {
+    currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+    loadTrack(currentTrackIndex);
+    playTrack();
+};
+
+const repeatTrack = () => {
+    loadTrack(currentTrackIndex);
+    playTrack();
+};
+
+//Connect buttons
+document.querySelector(".fa-forward-step").addEventListener("click", nextTrack);
+document.querySelector(".fa-backward-step").addEventListener("click", prevTrack);
+document.querySelector(".repeat-track").addEventListener("click", repeatTrack);
+
+//Load the first track on page load
+window.addEventListener("DOMContentLoaded", () => {
+    loadTrack(currentTrackIndex);
+});
+
+
+
+
 
