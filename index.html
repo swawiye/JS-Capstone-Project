@@ -41,12 +41,21 @@
     </section>
 
     <!-- Hero section -->
+    <header id="hero">
+        <div class="text-black text-center bg-pink-900/60 text-xl p-8 rounded-lg">
+            <h1 class="text-4xl font-bold">Plug in to your world</h1>
+            <p class="mt-5">Enjoy some melodies today on Musiqaa</p>
+        </div>
+    </header>
+
+    <!--
     <header id="hero" class="h-screen flex items-center justify-center text-white text-center slideshow">
         <div class="text-black text-center bg-pink-900/60 text-xl p-8 rounded-lg">
             <h1 class="text-4xl font-bold">Plug in to your world</h1>
             <p class="mt-5">Enjoy some melodies today on Musiqaa</p>
         </div>
     </header>
+    -->
 
     <main>
         <div class="text-center m-10">
@@ -71,6 +80,59 @@
                 that we have to offer.
             </p>
         </div>
+
+         <div class="p-10 bg-pink-900/60 mb-10 flex-cols-2">
+            <div>
+                <h3 class="mb-4 font-semibold text-pink-900">We love hearing back from our clients. Any querries or feedback you have?</h3>
+                <form action="submit" method="POST">
+                   <label for="name" class="text-white">Name:</label>
+                   <input type="text" id="name" name="name" placeholder="Enter your full name" class="p-2 mb-3 focus">
+                   <br>
+                   <label for="email address" class="text-white">Email address:</label>
+                   <input type="email address" id="email" placeholder="Enter your email address" class="p-2 mb-3">
+                   <br>
+                   <textarea id="message" placeholder="What is your message for us?" class="p-2"></textarea>
+                   <br>
+                   <button type="submit" value="submit" class="bg-pink-900 p-2 rounded-lg mt-4 hover:bg-emerald-600/60">Submit</button>
+                </form>
+            </div>
+            <div class="items-center">
+                <img src="assets/hero2.jpg" class="rounded-lg w-60">
+                <h3 class="mb-4 font-semibold text-pink-900">The amazing story of the shell</h3>
+                <p class="text-white">We use a shell to represent Musiqaa because......</p>
+            </div>
+         </div>
+
+        <!-- Sliding cards -->
+        <div class="grid grid-cols-2 gap-4 max-w-6xl mx-auto mt-2"> 
+
+            <!-- Contact us -->
+            <div class="border border-gray-500 rounded-lg px-10 py-6">
+                <h5 class="text-red-500 text-center text-3xl font-bold">My experience has been nothing short of amazing</h5>
+                <p class="mt-5">
+                    The curriculum is well designed and covers all the essential topics in a comprehensive manner.
+                    The instructors are knowledgeable and passionate about teaching, and they go above and beyond to ensure that every student understands the material.
+                    The learning environment is collaborative and supportive, with plenty of opportunities to work on projects with other students.
+                    This has not only helped me to improve my coding skills but also to develop my teamwork and communication abilities.
+                </p>
+                <p class="mt-5 text-cyan-600 font-semibold text-center">Januarius Kosgei</p>
+                <p class="text-gray-500 text-center">Data Science Graduate 2023</p>
+            </div> 
+
+            <!-- Card 2 -->
+            <div class="border border-gray-500  rounded-lg px-10 py-6">
+                <h5 class="text-red-500 text-center text-3xl font-bold">Reliable technical mentors with excellent support</h5>
+                <p class="mt-5">
+                    I enjoy how the course is structured, my Technical Mentor is super reliable and provides useful resources that compliment the course work I'm doing.
+                    The support from Zindua is excellent, they have a dedicated Slack channel where we ask and receive help from both the Technical Mentors and my fellow 
+                    students. The projects are challenging but manageable and help reinforce the material covered. I would recommend Zindua to anyone who wants to kickstart
+                    their tech career and want a personalized learning experience.  
+                </p>
+                <p class="mt-5 text-cyan-600 font-semibold text-center">Emelda Laeticia</p>
+                <p class="text-gray-500 text-center">Software Dev Graduate 2023</p>
+            </div>
+            
+        </div>  
     </main>
 
     <!-- Footer -->

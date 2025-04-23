@@ -122,6 +122,17 @@ i.fa-volume-high {
   color: white;
 }
 /*Hero section*/
+/* Hero section-landing page on a website */
+#hero {
+    background: url("assets/hero1.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .slideshow {
     background-size: cover;
     background-position: center;
