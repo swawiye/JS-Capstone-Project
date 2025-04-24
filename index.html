@@ -75,23 +75,23 @@
         <!-- Sliding cards -->
         <div class="grid grid-cols-2 gap-4 max-w-6xl mx-auto mt-2 mb-8"> 
             <!-- Contact us -->
-            <div class="p-10 bg-pink-900/60 border border-pink-900/60 rounded-lg px-8 py-4">
+            <div class="p-10 bg-gray-300 border border-gray-300 rounded-lg px-8 py-4">
                 <h3 class="text-2xl mb-4 font-semibold text-pink-900 mb-4">We love hearing back from our clients. Any querries or feedback you have?</h3>
                 <form action="submit" method="POST" class="text-center">
-                    <label for="name" class="text-white">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" class="p-2 mb-3 focus">
+                    <label for="name" class="text-black">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900">
                     <br>
-                    <label for="email address" class="text-white">Email address:</label>
-                    <input type="email address" id="email" placeholder="Enter your email address" class="p-2 mb-3">
+                    <label for="email address" class="text-black">Email address:</label>
+                    <input type="email address" id="email" placeholder="Enter your email address" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900">
                     <br>
-                    <textarea id="message" placeholder="What is your message for us?" class="p-2"></textarea>
+                    <textarea id="message" placeholder="What is your message for us?" placeholder="Enter your full name" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900"></textarea>
                     <br>
-                    <button type="submit" value="submit" class="bg-pink-900 p-2 rounded-lg mt-4 hover:bg-emerald-600/60">Submit</button>
+                    <button type="submit" value="submit" class="bg-pink-900 p-2 rounded-lg mt-4 hover:bg-emerald-600/60 text-white" onclick="submitContactForm()" id="submit-contact-form">Submit</button>
                  </form>
             </div> 
 
             <!-- Shell story card -->
-            <div class="p-10 bg-pink-900/60 border border-pink-900/60 rounded-lg px-8 py-4 text-center">
+            <div class="p-10 bg-gray-300 border border-gray-300 rounded-lg px-8 py-4 text-center">
                 <div class="ml-8">
                     <img src="assets/hero2.jpg" class="rounded-lg w-60">
                 </div>

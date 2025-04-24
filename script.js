@@ -174,6 +174,10 @@ song.addEventListener("ended", () => {
     nextTrack(); // or shuffleTrack() if isShuffle is true
 });
 
+//Contact Us form
+const submitContactForm = document.getElementById("submit-contact-form");
+
+submitContactForm.addEventListener("click", function () {});
 
 
 //Fetching data from the Spotify API

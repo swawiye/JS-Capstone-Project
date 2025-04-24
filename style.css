@@ -134,7 +134,10 @@ i.fa-volume-high {
     padding-top: 64px; /* Adjust based on actual navbar height */
 }
 
-/* Log In & Sign Up form */
+/*Log In & Sign Up form */
+
+
+/* Log In & Sign Up form 
 @media(max-width: 1100px){
     .wrapper{
         width: min(600px, 100%);
@@ -150,6 +153,7 @@ form div.incorrect input{
 #error-message{
     color: rgb(245, 93, 93);
 }
+*/
 
 /* Slideshow hero
 transition: background-image 1s ease-in-out;
