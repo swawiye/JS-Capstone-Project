@@ -46,7 +46,7 @@
             <div class="music-player">
                 <nav>
                     <div class="circle">
-                        <i class="fa-solid fa-angle-left"></i>
+                        <a href="music.html"><i class="fa-solid fa-angle-left"></i></a>
                     </div>
                     <div class="circle">
                         <i class="fa-solid fa-bars"></i>
@@ -55,7 +55,7 @@
                 <!--Song image-->
                 <img src="assets/hero3.jpg" class="song-img">
                 <!--Song details-->
-                <h1>Infrunami</h1> 
+                <h2>Infrunami</h2> 
                 <p>Steve Lacy</p>
                 <!--Audio-->
                 <audio id="song">
@@ -64,7 +64,7 @@
                 <div class="current-time">00:00</div>
                 <input type="range" value="0" id="progress">
                 <div class="controls">
-                    <div><i class="fa-solid fa-shuffle"></i></div>
+                    <div><i class="fa-solid fa-shuffle" onclick="shuffleTrack()"></i></div>
                     <div><i class="fa-solid fa-backward-step"></i></div>
                     <div><i class="fa-solid fa-play" id="ctrlIcon" onclick="playPause()"></i></div>
                     <div><i class="fa-solid fa-forward-step"></i></div>

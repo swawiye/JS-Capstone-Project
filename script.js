@@ -73,15 +73,15 @@ const playlist = [
         image: "assets/hero3.jpg"
     },
     {
-        title: "Dark Red",
-        artist: "Steve Lacy",
-        file: "assets/DarkRed.mp4",
+        title: "Promises",
+        artist: "Cleo Sol",
+        file: "assets/Promises.mp4",
         image: "assets/hero2.jpg"
     },
     {
-        title: "Bad Habit",
-        artist: "Steve Lacy",
-        file: "assets/BadHabit.mp4",
+        title: "One love",
+        artist: "Bob Marley ft The Wailers",
+        file: "assets/Bob Marley  The Wailers - One Love  People Get Ready (Official Music Video).mp4",
         image: "assets/hero1.jpg"
     }
 ];
@@ -115,10 +115,14 @@ const pauseTrack = () => {
     updatePlayPauseIcon(false);
 };
 
-const nextTrack = () => {
-    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-    loadTrack(currentTrackIndex);
-    playTrack();
+const nextTrack = () => { //also helps in checking shuffle
+    if (isShuffle) {
+        shuffleTrack();
+    } else {
+        currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+        loadTrack(currentTrackIndex);
+        playTrack();
+    }
 };
 
 const prevTrack = () => {
@@ -141,6 +145,35 @@ document.querySelector(".repeat-track").addEventListener("click", repeatTrack);
 window.addEventListener("DOMContentLoaded", () => {
     loadTrack(currentTrackIndex);
 });
+
+//Shuffle function
+let isShuffle = false;
+
+const shuffleTrack = () => {
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * playlist.length);
+    } while (newIndex === currentTrackIndex); // to avoid repeating the same track
+
+    currentTrackIndex = newIndex;
+    loadTrack(currentTrackIndex);
+    playTrack();
+};
+
+//connect to shuffle btn
+const shuffleBtn = document.querySelector(".fa-shuffle");
+
+shuffleBtn.addEventListener("click", () => {
+    isShuffle = !isShuffle;
+    shuffleBtn.classList.toggle("active", isShuffle); // Optional: add a visual cue
+});
+
+//Go to next song automatically after finishing
+song.addEventListener("ended", () => {
+    nextTrack(); // or shuffleTrack() if isShuffle is true
+});
+
+
 
 //Fetching data from the Spotify API
 async function fetchData() { 
