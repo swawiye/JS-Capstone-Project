@@ -142,7 +142,25 @@ window.addEventListener("DOMContentLoaded", () => {
     loadTrack(currentTrackIndex);
 });
 
-//Fetching data from the API
+//Fetching data from the Spotify API
+async function fetchData() { 
+    try{
+        const response = await fetch("https://api.spotify.com.");
+        if(!response.ok) {
+            throw new Error("Could not fetch resource");
+        }
+        const data = await response.json();
+        console.log(data);
+    }
+    catch(error) {
+        console.error(error);
+    }
+};
+fetchData();
+
+
+  
+
 
 
 

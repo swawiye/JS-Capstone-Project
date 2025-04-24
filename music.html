@@ -41,35 +41,20 @@
     </section>
 
     <section>
-        <div class="container">        
-            <form action=" " class="text-center">
-                <input type="hidden" id='hidden_token'>
-                <div class="col-sm-6 form-group row mt-4 px-0">
-                    <label for="Genre" class="form-label col-sm-2">Genre:</label>
-                    <select name="" id="select_genre" class="form-control form-control-sm col-sm-10 border border-pink-900 mb-5">
-                        <option>Select...</option>                    
-                    </select>
+        <!--Music communities -->
+        <div class="grid grid-cols-1 md:grid-cols-3 mx-auto max-w-6xl gap-4 mt-5 mb-5">
+            <!-- Community 1 -->
+            <div class="border border-gray-500 rounded-lg px-2 py-10 bg-gray-500">
+                <div class="items-center ml-15">
+                    <div class="ml-10 w-60">
+                        <img src="assets/aura 1.jpeg" alt="song img" style="width">
+                    </div>
+                    <p class="mt-5 text-gray-200 font-semibold text-center mr-10">Calming sounds</p>
+                        <audio controls>
+                            <source src=" " type="audio/mpeg">
+                        </audio>
                 </div>
-                <div class="col-sm-6 form-group row px-0">
-                    <label for="Genre" class="form-label col-sm-2">Playlists:</label>
-                    <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10 border border-pink-900 mb-5">
-                        <option>Select...</option>                    
-                    </select>
-                </div>                  
-                <div class="col-sm-6 row form-group px-0">
-                    <button type="submit" id="btn_submit" class="btn btn-success col-sm-12 bg-pink-900 p-1 rounded-lg hover:bg-pink-900/70">Search</button>
-                </div>          
-            </form>        
-            <div class="row">
-                <div class="col-sm-6 px-0">
-                    <div class="list-group song-list">
-                        
-                    </div>                                             
-                </div>
-                <div class="offset-md-1 col-sm-4" id="song-detail">                
-                </div>
-            </div> 
-        </div>
+            </div>
     </section>
     <!-- Footer -->
     <footer class="bg-pink-900 text-white py-8 z-index-">
