@@ -131,10 +131,7 @@ i.fa-volume-high {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Slideshow hero */
-    transition: background-image 1s ease-in-out;
-    position: relative;
-    z-index: 1;
+    padding-top: 64px; /* Adjust based on actual navbar height */
 }
 
 /* Log In & Sign Up form */
@@ -153,6 +150,12 @@ form div.incorrect input{
 #error-message{
     color: rgb(245, 93, 93);
 }
+
+/* Slideshow hero
+transition: background-image 1s ease-in-out;
+position: relative;
+z-index: 1;
+ */
 
 
 

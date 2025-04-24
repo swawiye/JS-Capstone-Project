@@ -3,8 +3,9 @@ const hamburgerButton = document.getElementById('hamburger-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
 hamburgerButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('hidden');
 });
+//Ensures that the script loads before the DOM is loaded: "document.addEventListener('DOMContentLoaded', () => {});"
 
 // Get DOM elements
 const song = document.getElementById("song");
