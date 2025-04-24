@@ -247,6 +247,57 @@ const emailError = document.getElementById('emailError');
 const passwordError = document.getElementById('passwordError');
 const confirmPasswordError = document.getElementById('confirmPasswordError');
 
+// Add event listener for form submission
+signUpForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting immediately
+
+    // Clear previous error messages
+    clearErrors();
+
+    // Validate form inputs
+    let isValid = true;
+
+    // Validate Full Name (must not contain numbers)
+    if (fullNameInput.value.trim() === "") {
+        fullNameError.textContent = "Full Name is required";
+        isValid = false;
+    } else if (/\d/.test(fullNameInput.value)) {
+        fullNameError.textContent = "Full Name should not contain numbers";
+        isValid = false;
+    }
+
+    // Validate Email
+    if (emailInput.value.trim() === "") {
+        emailError.textContent = "Email is required";
+        isValid = false;
+    } else if (!validateEmail(emailInput.value)) {
+        emailError.textContent = "Please enter a valid email address";
+        isValid = false;
+    }
+
+    // Validate Password (must be at least 6 characters)
+    if (passwordInput.value.trim() === "") {
+        passwordError.textContent = "Password is required";
+        isValid = false;
+    } else if (passwordInput.value.length < 6) {
+        passwordError.textContent = "Password must be at least 6 characters long";
+        isValid = false;
+    }
+
+    // Validate Confirm Password (must match the password)
+    if (confirmPasswordInput.value.trim() === "") {
+        confirmPasswordError.textContent = "Please confirm your password";
+        isValid = false;
+    } else if (confirmPasswordInput.value !== passwordInput.value) {
+        confirmPasswordError.textContent = "Passwords do not match";
+        isValid = false;
+    }
+
+    // If all validations pass, store data in local storage
+    if (isValid) {
+        saveUserData();
+    }
+});
 
 // Login Validation
 if (window.location.pathname.includes('login.html')) {
