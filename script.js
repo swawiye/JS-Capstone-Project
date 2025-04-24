@@ -191,51 +191,7 @@ async function fetchData() {
 fetchData();
 
 //LOG IN & SIGN UP PAGE
-
-// SignUp Validation & LocalStorage
-if (document.getElementById('form')) {
-    document.getElementById('form').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const name = document.getElementById('f-name-input').value.trim();
-        const email = document.getElementById('email-input').value.trim();
-        const password = document.getElementById('password-input').value;
-        const confirmPassword = document.getElementById('confirm-password-input').value;
-        const errorMessage = document.getElementById('error-message');
-
-        // Basic validation
-        if (!name || !email || !password || !confirmPassword) {
-            errorMessage.textContent = "All fields are required.";
-            errorMessage.style.color = "red";
-            return;
-        }
-
-        if (!email.includes('@')) {
-            errorMessage.textContent = "Please enter a valid email address.";
-            errorMessage.style.color = "red";
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            errorMessage.textContent = "Passwords do not match.";
-            errorMessage.style.color = "red";
-            return;
-        }
-
-        // Store data in localStorage
-        const userData = {
-            name,
-            email,
-            password
-        };
-        localStorage.setItem('user', JSON.stringify(userData));
-
-        alert("Signup successful! You can now log in.");
-        window.location.href = "login.html"; // Redirect to login
-    });
-}
-
-//SIGN UP FORM
+//Sign Up Form
 // Get form elements
 const signUpForm = document.getElementById('signUpForm');
 const fullNameInput = document.getElementById('fullName');
@@ -299,153 +255,32 @@ signUpForm.addEventListener('submit', function(event) {
     }
 });
 
-// Login Validation
-if (window.location.pathname.includes('login.html')) {
-    document.querySelector('form').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const email = document.querySelector('input[name="email"]').value.trim();
-        const password = document.querySelector('input[name="password"]').value;
-
-        const storedUser = JSON.parse(localStorage.getItem('user'));
-
-        if (!storedUser) {
-            alert("No user found. Please sign up first.");
-            return;
-        }
-
-        if (email === storedUser.email && password === storedUser.password) {
-            alert("Login successful!");
-            window.location.href = "index.html"; // Redirect to homepage
-        } else {
-            alert("Invalid email or password.");
-        }
-    });
+// Function to clear error messages
+function clearErrors() {
+    fullNameError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    confirmPasswordError.textContent = "";
 }
 
-/*
-const form = document.getElementById("form");
-const fNameInput = document.getElementById("f-name-input");
-const emailInput = document.getElementById("email-input");
-const passwordInput = document.getElementById("password-input");
-const confirmPasswordInput = document.getElementById("confirm-password-input");
-const errorMessage = document.getElementById("error-message")
+// Email validation using regular expression
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
 
-let users = JSON.parse(localStorage.getItem('users')) || [];
-function isUserLoggedIn() {
-    return localStorage.getItem('currentUser') !== null;
-  }
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let errors = [];
-    if (fNameInput) {
-        // Signup form validation
-        errors = getSignUpFormErrors(
-            fNameInput.value,
-            emailInput.value,
-            passwordInput.value,
-            confirmPasswordInput.value
-    );
-    if (errors.length === 0) {
-        // Check if user already exists
-        const userExists = users.some(user => user.email === emailInput.value);
-        if (userExists) {
-            errors.push("Email already registered");
-            emailInput.parentElement.classList.add("incorrect");
-        } else {
-            // Save new user
-            users.push({
-                fName: fNameInput.value,
-                email: emailInput.value,
-                password: passwordInput.value
-            });
-            localStorage.setItem('users', JSON.stringify(users));
-            handleSuccessfulLogin();
-            alert("Signup successful! Please login.");
-            window.location.href = "login.html"; // Redirect to login page
-        }
-    }else {
-        // Login form validation
-        errors = getLoginFormErrors(emailInput.value, passwordInput.value);
-        if (errors.length === 0) {
-            // Check credentials
-            const user = users.find(user => user.email === emailInput.value);
-            if (!user) {
-                errors.push("Email not found");
-                emailInput.parentElement.classList.add("incorrect");
-            } else if (user.password !== passwordInput.value) {
-                errors.push("Incorrect password");
-                passwordInput.parentElement.classList.add("incorrect");
-            } else {
-                alert("Welcome back!");
-                // Store the logged-in user's email
-                localStorage.setItem('currentUser', JSON.stringify(user.email));
-                window.location.href = "index.html"; // Redirect after login
-            }
-        }
+// Function to save user data to local storage
+function saveUserData() {
+    const userData = {
+        fullName: fullNameInput.value,
+        email: emailInput.value,
+        password: passwordInput.value
     };
-    if (errors.length > 0) {
-        errorMessage.innerText = errors.join(". ");
-    } else {
-        // If no errors, the form would submit normally
-    }
-    };
-    //creating an array that will hold the error messages
-    function getSignUpFormErrors(fname, email, password, confirmPassword) {
-    let errors = []
-    if(fname === "" || fname == null){
-        errors.push("First name is required")
-        fNameInput.parentElement.classList.add("incorrect")
-    }
-    if(email === "" || email == null){
-        errors.push("Email is required")
-        emailInput.parentElement.classList.add("incorrect")
-    }
-    if(password === "" || password == null){
-        errors.push("Password is required")
-        passwordInput.parentElement.classList.add("incorrect")
-    }
-    if(password != confirmPassword){
-        errors.push("Password does not match confirmed password")
-        passwordInput.parentElement.classList.add("incorrect")
-        confirmPasswordInput.parentElement.classList.add("incorrect")
-    }
-    if(password.length < 8) {
-        errors.push("Password should not be less than 6 characters")
-        passwordInput.parentElement.classList.add("incorrect")
-    }
-    return errors;
-    isUserLoggedIn()
-    };
-    function getLoginFormErrors(email, password) {
-        let errors = []
-        if(email === "" || email == null){
-            errors.push("Email is required")
-            emailInput.parentElement.classList.add("incorrect")
-        }
-        if(password === "" || password == null){
-            errors.push("Password is required")
-            passwordInput.parentElement.classList.add("incorrect")
-        }
-        return errors
-    }
-    const allInputs = [firstNameInput, emailInput, passwordInput, repeatPasswordInput].filter(input => input != null)
-    allInputs.forEach(input => {
-        input.addEventListener("input", () => {
-            if(input.parentElement.classList.contains("incorrect")){
-                input.parentElement.classList.remove("incorrect")
-                errorMessage.innerText = ""
-            }
-        })
-        isUserLoggedIn()
-    });
-}):
-*/
-    
 
+    // Save to local storage
+    localStorage.setItem('userData', JSON.stringify(userData));
 
-  
-
-
-
-
+    // Display a success message or redirect
+    alert('Sign up successful!');
+    window.location.href = 'login.html'; // Optionally redirect to login page
+}
