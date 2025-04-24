@@ -241,8 +241,30 @@ if (document.getElementById('form')) {
 }
 
 //Contact Form
-function validateForm() {
+//Get data
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+const success = document.getElementById("success");
+const errorNodes = document.getElementById("error");
 
+function validateForm() {
+    clearMessages();
+
+    if(nameInput.value.lenght < 1) {
+        errorNodes[0].innerText = "Please enter your name";
+    }
+
+    if(!emailIsValid(email.value)) {
+        
+    }
+};
+
+//Clear the error/success messages
+function clearMessages() {
+    for(let i = 0; i , errorNodes.length; i++) {
+        errorNodes[i].innerText = "";
+    }
 }
 
 // Login Validation
