@@ -6,11 +6,11 @@
     <title>Log In</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/b848093772.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" src="form-style.css">
 </head>
-<body style="background-image: url('assets/hero1.jpg'); background-repeat: no-repeat; background-size: cover;">
+<body>
     <!--Navbar-->
-    <section class="bg-pink-900">
+    <header class="bg-pink-900">
         <nav class="flex justify-between items-center px-4 py-3 md:px-8 relative">
             <!-- Logo -->
             <div>
@@ -38,7 +38,7 @@
                 <button class="text-white hover:text-pink-500"><a href="login.html"><i class="fa-solid fa-user"></i></a></button>
             </div>
         </nav>
-    </section>
+    </header>    
 
     <!-- Log In form 
     <section id="contact" class="flex-col mb-10 items-center justify-center mt-40">
@@ -69,10 +69,15 @@
                         <input type="text" placeholder="Enter your email" required>
                         <i class="fa-regular fa-envelope"></i>
                     </div>
+                    <div class="input-field">
+                        <input type="password " placeholder="Enter your password" required>
+                        <i class="fa-regular fa-lock"></i>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

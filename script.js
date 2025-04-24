@@ -176,7 +176,6 @@ song.addEventListener("ended", () => {
 
 //Contact Us form
 const submitContactForm = document.getElementById("submit-contact-form");
-
 submitContactForm.addEventListener("click", function () {});
 
 
@@ -239,6 +238,11 @@ if (document.getElementById('form')) {
         alert("Signup successful! You can now log in.");
         window.location.href = "login.html"; // Redirect to login
     });
+}
+
+//Contact Form
+function validateForm() {
+
 }
 
 // Login Validation

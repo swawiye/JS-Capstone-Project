@@ -77,18 +77,22 @@
             <!-- Contact us -->
             <div class="p-10 bg-gray-300 border border-gray-300 rounded-lg px-8 py-4">
                 <h3 class="text-2xl mb-4 font-semibold text-pink-900 mb-4">We love hearing back from our clients. Any querries or feedback you have?</h3>
-                <form action="submit" method="POST" class="text-center">
+                <form class="text-center" onsubmit="event.preventDefault(); validateForm()">
                     <label for="name" class="text-black">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900">
+                    <small id="error" class="text-red-500"></small>
                     <br>
                     <label for="email address" class="text-black">Email address:</label>
                     <input type="email address" id="email" placeholder="Enter your email address" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900">
+                    <small id="error" class="text-red-500"></small>
                     <br>
                     <textarea id="message" placeholder="What is your message for us?" placeholder="Enter your full name" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900"></textarea>
+                    <small id="error" class="text-red-500"></small>
                     <br>
                     <button type="submit" value="submit" class="bg-pink-900 p-2 rounded-lg mt-4 hover:bg-emerald-600/60 text-white" onclick="submitContactForm()" id="submit-contact-form">Submit</button>
+                    <p id="success" class="text-green-500"></p>
                  </form>
-            </div> 
+            </div>   
 
             <!-- Shell story card -->
             <div class="p-10 bg-gray-300 border border-gray-300 rounded-lg px-8 py-4 text-center">
