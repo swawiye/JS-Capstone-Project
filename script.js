@@ -174,11 +174,6 @@ song.addEventListener("ended", () => {
     nextTrack(); // or shuffleTrack() if isShuffle is true
 });
 
-//Contact Us form
-const submitContactForm = document.getElementById("submit-contact-form");
-submitContactForm.addEventListener("click", function () {});
-
-
 //Fetching data from the Spotify API
 async function fetchData() { 
     try{
@@ -246,25 +241,44 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 const success = document.getElementById("success");
-const errorNodes = document.getElementById("error");
+const errorNodes = document.querySelectorAll(".error");
 
 function validateForm() {
     clearMessages();
+    let errorFlag = false;
 
-    if(nameInput.value.lenght < 1) {
+    if(nameInput.value.length < 1) {
         errorNodes[0].innerText = "Please enter your name";
+        errorFlag = true;
     }
 
-    if(!emailIsValid(email.value)) {
-        
+    if (!emailIsValid(emailInput.value)) {
+        errorNodes[1].innerText = "Invalid email address"; 
+        errorFlag = true;
+    }
+
+    if(messageInput.value.length < 1) {
+        errorNodes[2].innerText = "Please enter message";
+        errorFlag = true; 
+    }
+
+    if(!errorFlag) {
+        success.innerText = "Message sent successfully!";
     }
 };
 
 //Clear the error/success messages
 function clearMessages() {
-    for(let i = 0; i , errorNodes.length; i++) {
+    for(let i = 0; i < errorNodes.length; i++) {
         errorNodes[i].innerText = "";
     }
+    success.innerHTML = ""
+}
+
+//Validating the email address
+function emailIsValid(email) {
+    let pattern = /\S+@\S+\.\S+/;
+    return pattern.test(email);
 }
 
 // Login Validation
