@@ -218,7 +218,7 @@ signUpForm.addEventListener('submit', function(event) {
         fullNameError.textContent = "Full Name is required";
         isValid = false;
     } else if (/\d/.test(fullNameInput.value)) {
-        fullNameError.textContent = "Full Name should not contain numbers";
+        fullNameError.innerText = "Full Name should not contain numbers";
         isValid = false;
     }
 
