@@ -220,7 +220,7 @@ signUpForm.addEventListener('submit', function(event) {
     } else if (/\d/.test(fullNameInput.value)) {
         fullNameError.innerText = "Full Name should not contain numbers";
         isValid = false;
-    }
+    };
 
     // Validate Email
     if (emailInput.value.trim() === "") {
@@ -229,7 +229,7 @@ signUpForm.addEventListener('submit', function(event) {
     } else if (!validateEmail(emailInput.value)) {
         emailError.textContent = "Please enter a valid email address";
         isValid = false;
-    }
+    };
 
     // Validate Password (must be at least 6 characters)
     if (passwordInput.value.trim() === "") {
@@ -238,7 +238,7 @@ signUpForm.addEventListener('submit', function(event) {
     } else if (passwordInput.value.length < 6) {
         passwordError.textContent = "Password must be at least 6 characters long";
         isValid = false;
-    }
+    };
 
     // Validate Confirm Password (must match the password)
     if (confirmPasswordInput.value.trim() === "") {
@@ -247,12 +247,12 @@ signUpForm.addEventListener('submit', function(event) {
     } else if (confirmPasswordInput.value !== passwordInput.value) {
         confirmPasswordError.textContent = "Passwords do not match";
         isValid = false;
-    }
+    };
 
     // If all validations pass, store data in local storage
     if (isValid) {
         saveUserData();
-    }
+    };
 });
 
 // Function to clear error messages
@@ -261,13 +261,13 @@ function clearErrors() {
     emailError.textContent = "";
     passwordError.textContent = "";
     confirmPasswordError.textContent = "";
-}
+};
 
 // Email validation using regular expression
 function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
-}
+};
 
 // Function to save user data to local storage
 function saveUserData() {
@@ -283,7 +283,7 @@ function saveUserData() {
     // Display a success message or redirect
     alert('Sign up successful!');
     window.location.href = 'login.html'; // Optionally redirect to login page
-}
+};
 
 //Log In form
 loginForm = document.getElementById('loginForm');
@@ -309,31 +309,90 @@ loginForm.addEventListener('submit', function(event) {
     } else if (!validateEmail(emailInput.value)) {
         emailError.textContent = "Please enter a valid email address";
         isValid = false;
-    }
+    };
 
     // Validate Password
     if (passwordInput.value.trim() === "") {
         passwordError.textContent = "Password is required";
         isValid = false;
-    }
+    };
 
     // If validation is successful, proceed (can add further logic here)
     if (isValid) {
         alert('Log in successful!');
         // Implement further actions (e.g., redirect or save data)
         window.location.href = 'home.html'; // Redirect to home page or dashboard
-    }
+    };
 });
 
 // Function to clear error messages
 function clearErrors() {
     emailError.textContent = "";
     passwordError.textContent = "";
-}
+};
 
 // Email validation using regular expression
 function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
+};
+
+//CONTACT US FORM
+const contactForm = document.getElementById("contactForm");
+const nameInput = document.getElementById("name");
+emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+
+const nameError = document.getElementById("nameError");
+emailError = document.getElementById("emailError");
+const messageError = document.getElementById("messageError");
+const successMsg = document.getElementById("success");
+
+contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    clearMessages();
+
+    let isValid = true;
+
+    // Name Validation (required, no numbers)
+    const nameValue = nameInput.value.trim();
+    if (nameValue === "") {
+        nameError.textContent = "Name is required.";
+        isValid = false;
+    } else if (/\d/.test(nameValue)) {
+        nameError.textContent = "Name should not contain numbers.";
+        isValid = false;
+    }
+
+    // Email Validation
+    const emailValue = emailInput.value.trim();
+    if (emailValue === "") {
+        emailError.textContent = "Email is required.";
+        isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        emailError.textContent = "Please enter a valid email.";
+        isValid = false;
+    }
+
+    // Message Validation
+    const messageValue = messageInput.value.trim();
+    if (messageValue === "") {
+        messageError.textContent = "Please enter a message.";
+        isValid = false;
+    }
+
+    // If all inputs are valid
+    if (isValid) {
+        successMsg.textContent = "Thank you for your message! We'll get back to you shortly.";
+        contactForm.reset(); // Optional: Clear form fields
+    }
+});
+
+function clearMessages() {
+    nameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+    successMsg.textContent = "";
 }
+
 

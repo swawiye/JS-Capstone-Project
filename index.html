@@ -72,41 +72,65 @@
             </p>
         </div>
 
-        <!-- Sliding cards -->
-        <div class="grid grid-cols-2 gap-4 max-w-6xl mx-auto mt-2 mb-8"> 
-            <!-- Contact us -->
-            <div class="p-10 bg-gray-300 border border-gray-300 rounded-lg px-8 py-4">
-                <h3 class="text-2xl mb-4 font-semibold text-pink-900">We love hearing back from our clients. Any queries or feedback you have?</h3>
-                <form class="text-center" onsubmit="event.preventDefault(); validateForm()">
-                    <label for="name" class="text-black">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900">
-                    <small class="error text-red-500"></small>
-                    <br>
-            
-                    <label for="email" class="text-black">Email address:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email address" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900">
-                    <small class="error text-red-500"></small>
-                    <br>
-            
-                    <textarea id="message" name="message" placeholder="What is your message for us?" class="p-2 mb-3 rounded-lg focus:outline-none focus:border-pink-900 focus:ring-2 focus:ring-pink-900"></textarea>
-                    <small class="error text-red-500"></small>
-                    <br>
-            
-                    <button type="submit" class="bg-pink-900 p-2 rounded-lg mt-4 hover:bg-emerald-600/60 text-white">Submit</button>
-                    <p id="success" class="text-green-500"></p>
+        <!-- Cards -->
+        <div class="grid grid-cols-2 gap-4 max-w-6xl mx-auto mt-2 mb-8">
+
+            <!-- Contact Us -->
+            <div class="p-10 bg-gray-300 border border-gray-300 rounded-lg max-w-2xl mx-auto mt-10">
+                <h3 class="text-2xl mb-6 font-semibold text-pink-900">
+                    We love hearing back from our clients. Any queries or feedback you have?
+                </h3>
+                <form id="contactForm" class="space-y-4">
+                    <!-- Name Input -->
+                    <div>
+                        <label for="name" class="text-black block">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name"
+                            class="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-900">
+                        <small id="nameError" class="text-red-500 text-sm"></small>
+                    </div>
+                
+                    <!-- Email Input -->
+                    <div>
+                        <label for="email" class="text-black block">Email address:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address"
+                            class="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-900">
+                        <small id="emailError" class="text-red-500 text-sm"></small>
+                    </div>
+                
+                    <!-- Message Textarea -->
+                    <div>
+                        <label for="message" class="text-black block">Message:</label>
+                        <textarea id="message" name="message" placeholder="What is your message for us?"
+                            class="w-full p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-900"></textarea>
+                        <small id="messageError" class="text-red-500 text-sm"></small>
+                    </div>
+                
+                    <!-- Submit Button & Success Message -->
+                    <div class="text-center">
+                        <button type="submit"
+                            class="bg-pink-900 p-2 px-6 rounded-lg text-white hover:bg-emerald-600/60">Submit</button>
+                        <p id="success" class="text-green-500 mt-3 text-sm"></p>
+                    </div>
                 </form>
             </div>
-              
-
-            <!-- Shell story card -->
-            <div class="p-10 bg-gray-300 border border-gray-300 rounded-lg px-8 py-4 text-center">
-                <div class="ml-8">
-                    <img src="assets/hero2.jpg" class="rounded-lg w-60">
+            <!-- Shell Story Card -->
+            <div class="max-w-2xl mx-auto p-10 bg-gray-300 border border-gray-300 rounded-lg mt-10 shadow-md">
+                <div class="flex flex-col items-center space-y-4">
+                    <!-- Image -->
+                    <img src="assets/hero2.jpg" alt="Shell image" class="rounded-lg w-60 shadow-md">
+                
+                    <!-- Title -->
+                    <h3 class="text-2xl font-semibold text-pink-900 text-center">
+                        The Amazing Story of the Shell
+                    </h3>
+                
+                    <!-- Description -->
+                    <p class="text-gray-800 text-center leading-relaxed">
+                        We use a shell to represent <span class="font-semibold">Musiqaa</span> because it symbolizes harmony, nature, and the timeless rhythm of the ocean — just like the power of music in our lives.
+                    </p>
                 </div>
-                <h3 class="mb-4 font-semibold text-pink-900">The amazing story of the shell</h3>
-                <p class="text-white">We use a shell to represent Musiqaa because......</p>
             </div>
-        </div>  
+        </div>    
     </main>
 
     <!-- Footer -->
