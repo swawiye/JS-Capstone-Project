@@ -50,9 +50,19 @@ const changeProgress = () => {
     updatePlayPauseIcon(true);
 };
 
+//Volume slider
 const setVolume = () => {
-    song.volume = volumeSlider.value / 100;
+    const volume = volumeSlider.value / 100;
+    song.volume = volume;
+
+    // Update volume icon based on the current volume
+    const volumeIcon = volume <= 0.1 ? 'fa-volume-xmark' :
+                       volume <= 0.5 ? 'fa-volume-low' :
+                       'fa-volume-high';
+    document.querySelector('.fa-volume-low').classList.remove('fa-volume-low', 'fa-volume-high', 'fa-volume-xmark');
+    document.querySelector('.fa-volume-low').classList.add(volumeIcon);
 };
+
 
 // Button functionality
 ctrlIcon.addEventListener("click", togglePlayPause);
@@ -191,6 +201,7 @@ async function fetchData() {
 fetchData();
 
 //LOG IN & SIGN UP PAGE
+
 //Sign Up Form
 // Get form elements
 let signUpForm = document.getElementById('signUpForm');
