@@ -193,15 +193,15 @@ fetchData();
 //LOG IN & SIGN UP PAGE
 //Sign Up Form
 // Get form elements
-const signUpForm = document.getElementById('signUpForm');
-const fullNameInput = document.getElementById('fullName');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
-const confirmPasswordInput = document.getElementById('confirmPassword');
-const fullNameError = document.getElementById('fullNameError');
-const emailError = document.getElementById('emailError');
-const passwordError = document.getElementById('passwordError');
-const confirmPasswordError = document.getElementById('confirmPasswordError');
+let signUpForm = document.getElementById('signUpForm');
+let fullNameInput = document.getElementById('fullName');
+let emailInput = document.getElementById('email');
+let passwordInput = document.getElementById('password');
+let confirmPasswordInput = document.getElementById('confirmPassword');
+let fullNameError = document.getElementById('fullNameError');
+let emailError = document.getElementById('emailError');
+let passwordError = document.getElementById('passwordError');
+let confirmPasswordError = document.getElementById('confirmPasswordError');
 
 // Add event listener for form submission
 signUpForm.addEventListener('submit', function(event) {
@@ -284,3 +284,56 @@ function saveUserData() {
     alert('Sign up successful!');
     window.location.href = 'login.html'; // Optionally redirect to login page
 }
+
+//Log In form
+loginForm = document.getElementById('loginForm');
+emailInput = document.getElementById('email');
+passwordInput = document.getElementById('password');
+emailError = document.getElementById('emailError');
+passwordError = document.getElementById('passwordError');
+
+// Add event listener for form submission
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting immediately
+
+    // Clear previous error messages
+    clearErrors();
+
+    // Validate form inputs
+    let isValid = true;
+
+    // Validate Email
+    if (emailInput.value.trim() === "") {
+        emailError.textContent = "Email is required";
+        isValid = false;
+    } else if (!validateEmail(emailInput.value)) {
+        emailError.textContent = "Please enter a valid email address";
+        isValid = false;
+    }
+
+    // Validate Password
+    if (passwordInput.value.trim() === "") {
+        passwordError.textContent = "Password is required";
+        isValid = false;
+    }
+
+    // If validation is successful, proceed (can add further logic here)
+    if (isValid) {
+        alert('Log in successful!');
+        // Implement further actions (e.g., redirect or save data)
+        window.location.href = 'home.html'; // Redirect to home page or dashboard
+    }
+});
+
+// Function to clear error messages
+function clearErrors() {
+    emailError.textContent = "";
+    passwordError.textContent = "";
+}
+
+// Email validation using regular expression
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
