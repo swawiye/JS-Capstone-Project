@@ -210,15 +210,15 @@ fetchData();
 
 //Sign Up Form
 // Get form elements
-let signUpForm = document.getElementById('signUpForm');
-let fullNameInput = document.getElementById('fullName');
-let emailInput = document.getElementById('email');
-let passwordInput = document.getElementById('password');
-let confirmPasswordInput = document.getElementById('confirmPassword');
-let fullNameError = document.getElementById('fullNameError');
-let emailError = document.getElementById('emailError');
-let passwordError = document.getElementById('passwordError');
-let confirmPasswordError = document.getElementById('confirmPasswordError');
+const signUpForm = document.getElementById('signUpForm');
+const fullNameInput = document.getElementById('fullName');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirmPassword');
+const fullNameError = document.getElementById('fullNameError');
+const emailError = document.getElementById('emailError');
+const passwordError = document.getElementById('passwordError');
+const confirmPasswordError = document.getElementById('confirmPasswordError');
 
 // Add event listener for form submission
 signUpForm.addEventListener('submit', function(event) {
@@ -303,7 +303,7 @@ function saveUserData() {
 };
 
 //Log In form
-loginForm = document.getElementById('loginForm');
+const loginForm = document.getElementById('loginForm');
 emailInput = document.getElementById('email');
 passwordInput = document.getElementById('password');
 emailError = document.getElementById('emailError');
@@ -357,11 +357,11 @@ function validateEmail(email) {
 //CONTACT US FORM
 const contactForm = document.getElementById("contactForm");
 const nameInput = document.getElementById("name");
-emailInput = document.getElementById("email");
+const emailAddressInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 
 const nameError = document.getElementById("nameError");
-emailError = document.getElementById("emailError");
+const emailAddressError = document.getElementById("emailError");
 const messageError = document.getElementById("messageError");
 const successMsg = document.getElementById("success");
 
@@ -374,42 +374,42 @@ contactForm.addEventListener("submit", function (e) {
     // Name Validation (required, no numbers)
     const nameValue = nameInput.value.trim();
     if (nameValue === "") {
-        nameError.textContent = "Name is required.";
+        nameError.innerText = "Name is required.";
         isValid = false;
     } else if (/\d/.test(nameValue)) {
-        nameError.textContent = "Name should not contain numbers.";
+        nameError.innerText = "Name should not contain numbers.";
         isValid = false;
     }
 
     // Email Validation
-    const emailValue = emailInput.value.trim();
+    const emailValue = emailAddressInput.value.trim();
     if (emailValue === "") {
-        emailError.textContent = "Email is required.";
+        emailAddressError.innerText = "Email is required.";
         isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-        emailError.textContent = "Please enter a valid email.";
+        emailAddressError.innerText = "Please enter a valid email.";
         isValid = false;
     }
 
     // Message Validation
     const messageValue = messageInput.value.trim();
     if (messageValue === "") {
-        messageError.textContent = "Please enter a message.";
+        messageError.innerText = "Please enter a message.";
         isValid = false;
     }
 
     // If all inputs are valid
     if (isValid) {
-        successMsg.textContent = "Thank you for your message! We'll get back to you shortly.";
+        successMsg.innerText = "Thank you for your message! We'll get back to you shortly.";
         contactForm.reset(); // Optional: Clear form fields
     }
 });
 
 function clearMessages() {
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
-    successMsg.textContent = "";
+    nameError.innerText = "";
+    emailAddressError.innerText = "";
+    messageError.innerText= "";
+    successMsg.innerText = "";
 }
 
 
