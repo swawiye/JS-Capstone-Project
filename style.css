@@ -162,7 +162,28 @@ body {
   color: white;
 }
 
-
+/*Contact us error message*/
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+    display: block;
+  }
+  
+#success {
+    color: green;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+/*Spaces between text*/
+#contactForm input,
+#contactForm textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+}
 
 
 /* Hero section */
