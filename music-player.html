@@ -14,7 +14,7 @@
         <nav class="flex justify-between items-center px-4 py-3 md:px-8 relative">
             <!-- Logo -->
             <div>
-                <h1 class="text-white font-bold text-2xl"><a href="index.html">MUSIQAA</a></h1>
+                <h2 class="text-white font-bold text-2xl"><a href="index.html">MUSIQAA</a></h2>
             </div>
 
             <!-- Hamburger -->
@@ -26,7 +26,7 @@
             <div id="mobile-menu" class="absolute top-full left-0 w-full bg-pink-900 flex-col items-center gap-4 px-4 py-4 md:static md:flex md:flex-row md:w-auto md:gap-10 md:py-0 md:px-0 hidden md:flex">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
                     <li><a href="index.html" class="text-white hover:text-pink-500">Home</a></li>
-                    <li><a href="music.html" class="text-white hover:text-pink-500">Music</a></li>
+                    <li><a href="music.html" class="text-white hover:text-pink-500">Music Communities</a></li>
                 </ul>
                 <div class="md:hidden">
                     <button class="text-white hover:text-pink-500"><i class="fa-solid fa-user"></i></button>
@@ -49,19 +49,30 @@
                         <a href="music.html"><i class="fa-solid fa-angle-left"></i></a>
                     </div>
                     <div class="circle">
-                        <i class="fa-solid fa-bars"></i>
+                        <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i></i>
+                    </div>
+                      <!-- Song List -->
+                    <div class="song-list" id="songList">
+                      <ul>
+                        <li>Infrunami by Steve Lacy</li>
+                        <li>Promises by Cleo Sol</li>
+                        <li>One Love by Bob Marley ft The Wailers</li>
+                      </ul>
                     </div>
                 </nav>
                 <!--Song image-->
                 <img src="assets/hero3.jpg" class="song-img">
                 <!--Song details-->
-                <h2>Infrunami</h2> 
+                <h1>Infrunami</h1> 
                 <p>Steve Lacy</p>
                 <!--Audio-->
                 <audio id="song">
                     <source src="assets/Infrunami.mp4" type="audio/mpeg">
                 </audio>
-                <div class="current-time">00:00</div>
+                <div class="current-time-container">
+                    <div class="current-time">00:00</div>
+                </div>
+                
                 <input type="range" value="0" id="progress">
                 <div class="controls">
                     <div><i class="fa-solid fa-shuffle" onclick="shuffleTrack()"></i></div>
@@ -74,9 +85,8 @@
                     <i class="fa-solid fa-volume-low"></i>
                     <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()"> 
                     <i class="fa-solid fa-volume-high"></i>
-                </div>
+                </div>  
             </div> 
-        </div>
     </main>
 
     <!-- Footer -->

@@ -5,6 +5,7 @@ const mobileMenu = document.getElementById('mobile-menu');
 hamburgerButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
 });
+
 //Ensures that the script loads before the DOM is loaded: "document.addEventListener('DOMContentLoaded', () => {});"
 
 // Get DOM elements
@@ -25,7 +26,9 @@ const formatTime = (time) => {
 const updateProgress = () => {
     progress.value = song.currentTime;
     currentTimeDisplay.innerText = formatTime(song.currentTime);
+    //document.querySelector(".total-time").innerText = formatTime(song.duration);
 };
+
 
 //Play & pause icon
 const updatePlayPauseIcon = (isPlaying) => {
@@ -52,15 +55,7 @@ const changeProgress = () => {
 
 //Volume slider
 const setVolume = () => {
-    const volume = volumeSlider.value / 100;
-    song.volume = volume;
-
-    // Update volume icon based on the current volume
-    const volumeIcon = volume <= 0.1 ? 'fa-volume-xmark' :
-                       volume <= 0.5 ? 'fa-volume-low' :
-                       'fa-volume-high';
-    document.querySelector('.fa-volume-low').classList.remove('fa-volume-low', 'fa-volume-high', 'fa-volume-xmark');
-    document.querySelector('.fa-volume-low').classList.add(volumeIcon);
+    song.volume = volumeSlider.value / 100;
 };
 
 
@@ -111,9 +106,14 @@ const loadTrack = (index) => {
     songTitle.textContent = track.title;
     songArtist.textContent = track.artist;
 
+    // Add animation effect to the song image
+    songImg.classList.add("playing");
+    setTimeout(() => songImg.classList.remove("playing"), 300);
+
     progress.value = 0;
     updatePlayPauseIcon(false);
 };
+
 
 //Track control functions
 const playTrack = () => {
@@ -175,14 +175,20 @@ const shuffleTrack = () => {
 const shuffleBtn = document.querySelector(".fa-shuffle");
 
 shuffleBtn.addEventListener("click", () => {
-    isShuffle = !isShuffle;
-    shuffleBtn.classList.toggle("active", isShuffle); // Optional: add a visual cue
+        isShuffle = !isShuffle;
+        shuffleBtn.classList.toggle("active", isShuffle); // Optional: add a visual cue
 });
 
 //Go to next song automatically after finishing
 song.addEventListener("ended", () => {
     nextTrack(); // or shuffleTrack() if isShuffle is true
 });
+
+//Menu Bar 
+function toggleMenu() {
+    const list = document.getElementById('songList');
+    list.style.display = (list.style.display === 'block') ? 'none' : 'block';
+};
 
 //Fetching data from the Spotify API
 async function fetchData() { 

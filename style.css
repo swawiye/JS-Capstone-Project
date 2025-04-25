@@ -1,7 +1,7 @@
 .container {
     width: 100%;
     height: 100vh;
-    background: whitesmoke;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +33,7 @@ nav .circle {
     box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
     margin-left: 40px;
 }
-.music-player h2{
+.music-player h1{
     font-size: 20px;
     font-weight: 800;
     color: white;
@@ -121,6 +121,49 @@ i.fa-volume-high {
   padding: 10px;
   color: white;
 }
+
+/*Animated album cover*/
+.song-img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.song-img.playing {
+    transform: scale(1.05);
+}
+/*Active controls*/
+.controls i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.controls i:hover {
+    transform: scale(1.2);
+    color: #9b3851;
+}
+
+/*Menu bar on music player*/
+body {
+    font-family: Arial, sans-serif;
+}
+.menu-icon {
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+.song-list {
+  display: none;
+  margin-top: 20px;
+}
+.song-list ul {
+  list-style: none;
+  padding: 0;
+}
+.song-list li {
+  margin: 5px 0;
+  color: white;
+}
+
+
+
 
 /* Hero section */
 #hero {
